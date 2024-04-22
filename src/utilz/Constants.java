@@ -132,7 +132,7 @@ public class Constants {
 	}
 
 	public static class EnemyConstants {
-		public static final int CRABBY = 0;
+		public static final int PIG = 0;
 		public static final int PINKSTAR = 1;
 		public static final int SHARK = 2;
 
@@ -142,12 +142,12 @@ public class Constants {
 		public static final int HIT = 3;
 		public static final int DEAD = 4;
 
-		public static final int CRABBY_WIDTH_DEFAULT = 72;
-		public static final int CRABBY_HEIGHT_DEFAULT = 32;
-		public static final int CRABBY_WIDTH = (int) (CRABBY_WIDTH_DEFAULT * Game.SCALE);
-		public static final int CRABBY_HEIGHT = (int) (CRABBY_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int CRABBY_DRAWOFFSET_X = (int) (26 * Game.SCALE);
-		public static final int CRABBY_DRAWOFFSET_Y = (int) (9 * Game.SCALE);
+		public static final int PIG_WIDTH_DEFAULT = 72;
+		public static final int PIG_HEIGHT_DEFAULT = 32;
+		public static final int PIG_WIDTH = (int) (PIG_WIDTH_DEFAULT * Game.SCALE);
+		public static final int PIG_HEIGHT = (int) (PIG_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int PIG_DRAWOFFSET_X = (int) (26 * Game.SCALE);
+		public static final int PIG_DRAWOFFSET_Y = (int) (9 * Game.SCALE);
 
 		public static final int PINKSTAR_WIDTH_DEFAULT = 34;
 		public static final int PINKSTAR_HEIGHT_DEFAULT = 30;
@@ -167,7 +167,7 @@ public class Constants {
 			switch (enemy_state) {
 
 			case IDLE: {
-				if (enemy_type == CRABBY)
+				if (enemy_type == PIG)
 					return 9;
 				else if (enemy_type == PINKSTAR || enemy_type == SHARK)
 					return 8;
@@ -190,7 +190,7 @@ public class Constants {
 
 		public static int GetMaxHealth(int enemy_type) {
 			switch (enemy_type) {
-			case CRABBY:
+			case PIG:
 				return 50;
 			case PINKSTAR, SHARK:
 				return 25;
@@ -201,7 +201,7 @@ public class Constants {
 
 		public static int GetEnemyDmg(int enemy_type) {
 			switch (enemy_type) {
-			case CRABBY:
+			case PIG:
 				return 15;
 			case PINKSTAR:
 				return 20;
