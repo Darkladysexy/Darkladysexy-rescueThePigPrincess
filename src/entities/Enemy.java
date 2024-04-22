@@ -21,9 +21,7 @@ public abstract class Enemy extends Entity {
 	protected boolean active = true;
 	protected boolean attackChecked;
 	protected int attackBoxOffsetX;
-
-	private int test;
-
+	
 	public Enemy(float x, float y, int width, int height, int enemyType) {
 		super(x, y, width, height);
 		this.enemyType = enemyType;
