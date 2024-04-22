@@ -26,7 +26,7 @@ public class EnemyManager {
 
 	public void update(int[][] lvlData) {
 		boolean isAnyActive = false;
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			if (c.isActive()) {
 				c.update(lvlData, playing);
 				isAnyActive = true;
@@ -74,7 +74,7 @@ public class EnemyManager {
 	}
 
 	private void drawCrabs(Graphics g, int xLvlOffset) {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			if (c.isActive()) {
 
 				g.drawImage(crabbyArr[c.getState()][c.getAniIndex()], (int) c.getHitbox().x - xLvlOffset - PIG_DRAWOFFSET_X + c.flipX(),
@@ -87,7 +87,7 @@ public class EnemyManager {
 	}
 
 	public void checkEnemyHit(Rectangle2D.Float attackBox) {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			if (c.isActive())
 				if (c.getState() != DEAD && c.getState() != HIT)
 					if (attackBox.intersects(c.getHitbox())) {
@@ -133,7 +133,7 @@ public class EnemyManager {
 	}
 
 	public void resetAllEnemies() {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			c.resetEnemy();
 		for (Pinkstar p : currentLevel.getPinkstars())
 			p.resetEnemy();
