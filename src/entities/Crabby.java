@@ -5,11 +5,10 @@ import static utilz.HelpMethods.IsFloor;
 import static utilz.Constants.Dialogue.*;
 
 import gamestates.Playing;
-import utilz.Constants;
 
-public class Pig extends Enemy {
-
-	public Pig(float x, float y) {
+public class Crabby extends Enemy {
+	 
+	public Crabby(float x, float y) {
 		super(x, y, PIG_WIDTH, PIG_HEIGHT, PIG);
 		initHitbox(22, 19);
 		initAttackBox(82, 19, 30);
