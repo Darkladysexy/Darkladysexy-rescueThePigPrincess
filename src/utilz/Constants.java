@@ -133,8 +133,6 @@ public class Constants {
 
 	public static class EnemyConstants {
 		public static final int PIG = 0;
-		public static final int PINKSTAR = 1;
-		public static final int SHARK = 2;
 
 		public static final int IDLE = 0;
 		public static final int RUNNING = 1;
@@ -149,19 +147,6 @@ public class Constants {
 		public static final int PIG_DRAWOFFSET_X = (int) (26 * Game.SCALE);
 		public static final int PIG_DRAWOFFSET_Y = (int) (9 * Game.SCALE);
 
-		public static final int PINKSTAR_WIDTH_DEFAULT = 34;
-		public static final int PINKSTAR_HEIGHT_DEFAULT = 30;
-		public static final int PINKSTAR_WIDTH = (int) (PINKSTAR_WIDTH_DEFAULT * Game.SCALE);
-		public static final int PINKSTAR_HEIGHT = (int) (PINKSTAR_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int PINKSTAR_DRAWOFFSET_X = (int) (9 * Game.SCALE);
-		public static final int PINKSTAR_DRAWOFFSET_Y = (int) (7 * Game.SCALE);
-
-		public static final int SHARK_WIDTH_DEFAULT = 34;
-		public static final int SHARK_HEIGHT_DEFAULT = 30;
-		public static final int SHARK_WIDTH = (int) (SHARK_WIDTH_DEFAULT * Game.SCALE);
-		public static final int SHARK_HEIGHT = (int) (SHARK_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int SHARK_DRAWOFFSET_X = (int) (8 * Game.SCALE);
-		public static final int SHARK_DRAWOFFSET_Y = (int) (6 * Game.SCALE);
 
 		public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 			switch (enemy_state) {
@@ -169,14 +154,10 @@ public class Constants {
 			case IDLE: {
 				if (enemy_type == PIG)
 					return 9;
-				else if (enemy_type == PINKSTAR || enemy_type == SHARK)
-					return 8;
 			}
 			case RUNNING:
 				return 6;
 			case ATTACK:
-				if (enemy_type == SHARK)
-					return 8;
 				return 7;
 			case HIT:
 				return 4;
@@ -192,8 +173,6 @@ public class Constants {
 			switch (enemy_type) {
 			case PIG:
 				return 50;
-			case PINKSTAR, SHARK:
-				return 25;
 			default:
 				return 1;
 			}
@@ -203,10 +182,6 @@ public class Constants {
 			switch (enemy_type) {
 			case PIG:
 				return 15;
-			case PINKSTAR:
-				return 20;
-			case SHARK:
-				return 25;
 			default:
 				return 0;
 			}
