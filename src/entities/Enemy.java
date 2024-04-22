@@ -118,7 +118,7 @@ public abstract class Enemy extends Entity {
 	protected boolean isPlayerCloseForAttack(Player player) {
 		int absValue = (int) Math.abs(player.hitbox.x - hitbox.x);
 		switch (enemyType) {
-		case CRABBY -> {
+		case PIG -> {
 			return absValue <= attackDistance;
 		}
 		case SHARK -> {
@@ -159,7 +159,7 @@ public abstract class Enemy extends Entity {
 			aniTick = 0;
 			aniIndex++;
 			if (aniIndex >= GetSpriteAmount(enemyType, state)) {
-				if (enemyType == CRABBY || enemyType == SHARK) {
+				if (enemyType == PIG || enemyType == SHARK) {
 					aniIndex = 0;
 
 					switch (state) {
