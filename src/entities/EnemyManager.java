@@ -26,45 +26,47 @@ public class EnemyManager {
 
 	public void update(int[][] lvlData) {
 		boolean isAnyActive = false;
-		for (Crabby p : currentLevel.getPigs())
+		for (Pig p : currentLevel.getPigs())
 			if (p.isActive()) {
 				p.update(lvlData, playing);
 				isAnyActive = true;
 			}
+
 		if (!isAnyActive)
 			playing.setLevelCompleted(true);
 	}
 
 	public void draw(Graphics g, int xLvlOffset) {
-		drawPigs(g, xLvlOffset);
+		drawCrabs(g, xLvlOffset);
 	}
 
 
-	private void drawPigs(Graphics g, int xLvlOffset) {
-		for (Crabby p : currentLevel.getPigs())
+	private void drawCrabs(Graphics g, int xLvlOffset) {
+		for (Pig p : currentLevel.getPigs())
 			if (p.isActive()) {
 
 				g.drawImage(pigArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - PIG_DRAWOFFSET_X + p.flipX(),
 						(int) p.getHitbox().y - PIG_DRAWOFFSET_Y + (int) p.getPushDrawOffset(), PIG_WIDTH * p.flipW(), PIG_HEIGHT, null);
 
-//				c.drawHitbox(g, xLvlOffset);
-//				c.drawAttackBox(g, xLvlOffset);
+				p.drawHitbox(g, xLvlOffset);
+				p.drawAttackBox(g, xLvlOffset);
 			}
 
 	}
 
 	public void checkEnemyHit(Rectangle2D.Float attackBox) {
-		for (Crabby p : currentLevel.getPigs())
+		for (Pig p : currentLevel.getPigs())
 			if (p.isActive())
 				if (p.getState() != DEAD && p.getState() != HIT)
 					if (attackBox.intersects(p.getHitbox())) {
 						p.hurt(20);
 						return;
-					}	
+					}
+
 	}
 
 	private void loadEnemyImgs() {
-		pigArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.PIG_SPRITE), 9, 5, PIG_WIDTH_DEFAULT, PIG_HEIGHT_DEFAULT);
+		pigArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.PIG_SPRITE), 11, 8, PIG_WIDTH_DEFAULT, PIG_HEIGHT_DEFAULT);
 	}
 
 	private BufferedImage[][] getImgArr(BufferedImage atlas, int xSize, int ySize, int spriteW, int spriteH) {
@@ -76,7 +78,7 @@ public class EnemyManager {
 	}
 
 	public void resetAllEnemies() {
-		for (Crabby p : currentLevel.getPigs())
+		for (Pig p : currentLevel.getPigs())
 			p.resetEnemy();
 	}
 
