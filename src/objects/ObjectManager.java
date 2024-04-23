@@ -203,10 +203,10 @@ public class ObjectManager {
 		// drawGrass(g, xLvlOffset);
 	}
 
-	private void drawGrass(Graphics g, int xLvlOffset) {
-		for (Grass grass : currentLevel.getGrass())
-			g.drawImage(grassImgs[grass.getType()], grass.getX() - xLvlOffset, grass.getY(), (int) (32 * Game.SCALE), (int) (32 * Game.SCALE), null);
-	}
+	// private void drawGrass(Graphics g, int xLvlOffset) {
+	// 	for (Grass grass : currentLevel.getGrass())
+	// 		g.drawImage(grassImgs[grass.getType()], grass.getX() - xLvlOffset, grass.getY(), (int) (32 * Game.SCALE), (int) (32 * Game.SCALE), null);
+	// }
 
 	// public void drawBackgroundTrees(Graphics g, int xLvlOffset) {
 	// 	for (BackgroundTree bt : currentLevel.getTrees()) {
