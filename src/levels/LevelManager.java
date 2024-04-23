@@ -18,18 +18,18 @@ public class LevelManager {
 	public LevelManager(Game game) {
 		this.game = game;
 		importOutsideSprites();
-		createWater();
+		// createWater();
 		levels = new ArrayList<>();
 		buildAllLevels();
 	}
 
-	private void createWater() {
-		waterSprite = new BufferedImage[5];
-		BufferedImage img = LoadSave.GetSpriteAtlas(LoadSave.WATER_TOP);
-		for (int i = 0; i < 4; i++)
-			waterSprite[i] = img.getSubimage(i * 32, 0, 32, 32);
-		waterSprite[4] = LoadSave.GetSpriteAtlas(LoadSave.WATER_BOTTOM);
-	}
+	// private void createWater() {
+	// 	waterSprite = new BufferedImage[5];
+	// 	BufferedImage img = LoadSave.GetSpriteAtlas(LoadSave.WATER_TOP);
+	// 	for (int i = 0; i < 4; i++)
+	// 		waterSprite[i] = img.getSubimage(i * 32, 0, 32, 32);
+	// 	waterSprite[4] = LoadSave.GetSpriteAtlas(LoadSave.WATER_BOTTOM);
+	// }
 
 	public void loadNextLevel() {
 		Level newLevel = levels.get(lvlIndex);
