@@ -183,7 +183,7 @@ public class Constants {
 		public static int GetEnemyDmg(int enemy_type) {
 			switch (enemy_type) {
 			case PIG:
-				return 15;
+				return 100;
 			default:
 				return 0;
 			}
