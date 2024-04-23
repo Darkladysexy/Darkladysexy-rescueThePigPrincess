@@ -200,7 +200,7 @@ public class ObjectManager {
 		drawTraps(g, xLvlOffset);
 		// drawCannons(g, xLvlOffset);
 		drawProjectiles(g, xLvlOffset);
-		drawGrass(g, xLvlOffset);
+		// drawGrass(g, xLvlOffset);
 	}
 
 	private void drawGrass(Graphics g, int xLvlOffset) {
