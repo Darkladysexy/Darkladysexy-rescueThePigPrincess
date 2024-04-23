@@ -132,56 +132,39 @@ public class Constants {
 	}
 
 	public static class EnemyConstants {
-		public static final int CRABBY = 0;
-		public static final int PINKSTAR = 1;
-		public static final int SHARK = 2;
+		public static final int PIG = 0;
 
 		public static final int IDLE = 0;
 		public static final int RUNNING = 1;
-		public static final int ATTACK = 2;
-		public static final int HIT = 3;
-		public static final int DEAD = 4;
+		public static final int JUMP = 2;
+		public static final int FALL = 3;
+		public static final int GROUND = 4;
+		public static final int HIT = 5;
+		public static final int DEAD = 6;
+		public static final int ATTACK = 7;
 
-		public static final int CRABBY_WIDTH_DEFAULT = 72;
-		public static final int CRABBY_HEIGHT_DEFAULT = 32;
-		public static final int CRABBY_WIDTH = (int) (CRABBY_WIDTH_DEFAULT * Game.SCALE);
-		public static final int CRABBY_HEIGHT = (int) (CRABBY_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int CRABBY_DRAWOFFSET_X = (int) (26 * Game.SCALE);
-		public static final int CRABBY_DRAWOFFSET_Y = (int) (9 * Game.SCALE);
-
-		public static final int PINKSTAR_WIDTH_DEFAULT = 34;
-		public static final int PINKSTAR_HEIGHT_DEFAULT = 30;
-		public static final int PINKSTAR_WIDTH = (int) (PINKSTAR_WIDTH_DEFAULT * Game.SCALE);
-		public static final int PINKSTAR_HEIGHT = (int) (PINKSTAR_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int PINKSTAR_DRAWOFFSET_X = (int) (9 * Game.SCALE);
-		public static final int PINKSTAR_DRAWOFFSET_Y = (int) (7 * Game.SCALE);
-
-		public static final int SHARK_WIDTH_DEFAULT = 34;
-		public static final int SHARK_HEIGHT_DEFAULT = 30;
-		public static final int SHARK_WIDTH = (int) (SHARK_WIDTH_DEFAULT * Game.SCALE);
-		public static final int SHARK_HEIGHT = (int) (SHARK_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int SHARK_DRAWOFFSET_X = (int) (8 * Game.SCALE);
-		public static final int SHARK_DRAWOFFSET_Y = (int) (6 * Game.SCALE);
+		public static final int PIG_WIDTH_DEFAULT = 34;
+		public static final int PIG_HEIGHT_DEFAULT = 28;
+		public static final int PIG_WIDTH = (int) (PIG_WIDTH_DEFAULT * Game.SCALE);
+		public static final int PIG_HEIGHT = (int) (PIG_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int PIG_DRAWOFFSET_X = (int) (10 * Game.SCALE);
+		public static final int PIG_DRAWOFFSET_Y = (int) (10 * Game.SCALE);
 
 		public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 			switch (enemy_state) {
 
 			case IDLE: {
-				if (enemy_type == CRABBY)
-					return 9;
-				else if (enemy_type == PINKSTAR || enemy_type == SHARK)
-					return 8;
+				if (enemy_type == PIG)
+					return 11;
 			}
 			case RUNNING:
 				return 6;
 			case ATTACK:
-				if (enemy_type == SHARK)
-					return 8;
-				return 7;
-			case HIT:
-				return 4;
-			case DEAD:
 				return 5;
+			case HIT:
+				return 2;
+			case DEAD:
+				return 4;
 			}
 
 			return 0;
@@ -190,10 +173,8 @@ public class Constants {
 
 		public static int GetMaxHealth(int enemy_type) {
 			switch (enemy_type) {
-			case CRABBY:
+			case PIG:
 				return 50;
-			case PINKSTAR, SHARK:
-				return 25;
 			default:
 				return 1;
 			}
@@ -201,12 +182,8 @@ public class Constants {
 
 		public static int GetEnemyDmg(int enemy_type) {
 			switch (enemy_type) {
-			case CRABBY:
-				return 15;
-			case PINKSTAR:
-				return 20;
-			case SHARK:
-				return 25;
+			case PIG:
+				return 100;
 			default:
 				return 0;
 			}
@@ -267,24 +244,26 @@ public class Constants {
 		public static final int RUNNING = 1;
 		public static final int JUMP = 2;
 		public static final int FALLING = 3;
-		public static final int ATTACK = 4;
+		public static final int GROUND = 4;
+		public static final int ATTACK = 6;
 		public static final int HIT = 5;
-		public static final int DEAD = 6;
+		public static final int DEAD = 7;
 
 		public static int GetSpriteAmount(int player_action) {
 			switch (player_action) {
-			case DEAD:
-				return 8;
 			case RUNNING:
-				return 6;
+				return 8;
 			case IDLE:
-				return 5;
+				return 11;
 			case HIT:
-				return 4;
-			case JUMP:
+				return 2;
 			case ATTACK:
 				return 3;
+			case DEAD:
+				return 4;
 			case FALLING:
+			case JUMP:
+			case GROUND:
 			default:
 				return 1;
 			}
