@@ -86,12 +86,12 @@ public class ObjectManager {
 	}
 
 	private void loadImgs() {
-		BufferedImage potionSprite = LoadSave.GetSpriteAtlas(LoadSave.POTION_ATLAS);
-		potionImgs = new BufferedImage[2][7];
+		// BufferedImage potionSprite = LoadSave.GetSpriteAtlas(LoadSave.POTION_ATLAS);
+		// potionImgs = new BufferedImage[2][7];
 
-		for (int j = 0; j < potionImgs.length; j++)
-			for (int i = 0; i < potionImgs[j].length; i++)
-				potionImgs[j][i] = potionSprite.getSubimage(12 * i, 16 * j, 12, 16);
+		// for (int j = 0; j < potionImgs.length; j++)
+		// 	for (int i = 0; i < potionImgs[j].length; i++)
+		// 		potionImgs[j][i] = potionSprite.getSubimage(12 * i, 16 * j, 12, 16);
 
 		BufferedImage containerSprite = LoadSave.GetSpriteAtlas(LoadSave.CONTAINER_ATLAS);
 		containerImgs = new BufferedImage[2][8];
@@ -102,26 +102,26 @@ public class ObjectManager {
 
 		spikeImg = LoadSave.GetSpriteAtlas(LoadSave.TRAP_ATLAS);
 
-		cannonImgs = new BufferedImage[7];
-		BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.CANNON_ATLAS);
+		// cannonImgs = new BufferedImage[7];
+		// BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.CANNON_ATLAS);
 
-		for (int i = 0; i < cannonImgs.length; i++)
-			cannonImgs[i] = temp.getSubimage(i * 40, 0, 40, 26);
+		// for (int i = 0; i < cannonImgs.length; i++)
+		// 	cannonImgs[i] = temp.getSubimage(i * 40, 0, 40, 26);
 
-		cannonBallImg = LoadSave.GetSpriteAtlas(LoadSave.CANNON_BALL);
-		treeImgs = new BufferedImage[2][4];
-		BufferedImage treeOneImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_ONE_ATLAS);
-		for (int i = 0; i < 4; i++)
-			treeImgs[0][i] = treeOneImg.getSubimage(i * 39, 0, 39, 92);
+		// cannonBallImg = LoadSave.GetSpriteAtlas(LoadSave.CANNON_BALL);
+		// treeImgs = new BufferedImage[2][4];
+		// BufferedImage treeOneImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_ONE_ATLAS);
+		// for (int i = 0; i < 4; i++)
+		// 	treeImgs[0][i] = treeOneImg.getSubimage(i * 39, 0, 39, 92);
 
-		BufferedImage treeTwoImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_TWO_ATLAS);
-		for (int i = 0; i < 4; i++)
-			treeImgs[1][i] = treeTwoImg.getSubimage(i * 62, 0, 62, 54);
+		// BufferedImage treeTwoImg = LoadSave.GetSpriteAtlas(LoadSave.TREE_TWO_ATLAS);
+		// for (int i = 0; i < 4; i++)
+		// 	treeImgs[1][i] = treeTwoImg.getSubimage(i * 62, 0, 62, 54);
 
-		BufferedImage grassTemp = LoadSave.GetSpriteAtlas(LoadSave.GRASS_ATLAS);
-		grassImgs = new BufferedImage[2];
-		for (int i = 0; i < grassImgs.length; i++)
-			grassImgs[i] = grassTemp.getSubimage(32 * i, 0, 32, 32);
+		// BufferedImage grassTemp = LoadSave.GetSpriteAtlas(LoadSave.GRASS_ATLAS);
+		// grassImgs = new BufferedImage[2];
+		// for (int i = 0; i < grassImgs.length; i++)
+		// 	grassImgs[i] = grassTemp.getSubimage(32 * i, 0, 32, 32);
 	}
 
 	public void update(int[][] lvlData, Player player) {
