@@ -13,6 +13,7 @@ public class SoundButton extends PauseButton {
 	private boolean muted;
 	private int rowIndex, colIndex;
 
+
 	public SoundButton(int x, int y, int width, int height) {
 		super(x, y, width, height);
 

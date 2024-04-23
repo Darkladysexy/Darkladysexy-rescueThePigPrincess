@@ -32,12 +32,17 @@ public abstract class Enemy extends Entity {
 	}
 
 	protected void updateAttackBox() {
-		attackBox.x = hitbox.x - attackBoxOffsetX;
+		if (walkDir == RIGHT)
+			attackBox.x = hitbox.x + hitbox.width;
+		else
+			attackBox.x = hitbox.x - attackBoxOffsetX;
+
 		attackBox.y = hitbox.y;
 	}
 
+
 	protected void updateAttackBoxFlip() {
-		if (walkDir == RIGHT)
+		if (walkDir == LEFT)
 			attackBox.x = hitbox.x + hitbox.width;
 		else
 			attackBox.x = hitbox.x - attackBoxOffsetX;
@@ -118,11 +123,8 @@ public abstract class Enemy extends Entity {
 	protected boolean isPlayerCloseForAttack(Player player) {
 		int absValue = (int) Math.abs(player.hitbox.x - hitbox.x);
 		switch (enemyType) {
-		case CRABBY -> {
+		case PIG -> {
 			return absValue <= attackDistance;
-		}
-		case SHARK -> {
-			return absValue <= attackDistance * 2;
 		}
 		}
 		return false;
@@ -146,10 +148,6 @@ public abstract class Enemy extends Entity {
 	protected void checkPlayerHit(Rectangle2D.Float attackBox, Player player) {
 		if (attackBox.intersects(player.hitbox))
 			player.changeHealth(-GetEnemyDmg(enemyType), this);
-		else {
-			if (enemyType == SHARK)
-				return;
-		}
 		attackChecked = true;
 	}
 
@@ -159,25 +157,14 @@ public abstract class Enemy extends Entity {
 			aniTick = 0;
 			aniIndex++;
 			if (aniIndex >= GetSpriteAmount(enemyType, state)) {
-				if (enemyType == CRABBY || enemyType == SHARK) {
+				if (enemyType == PIG) {
 					aniIndex = 0;
 
 					switch (state) {
 					case ATTACK, HIT -> state = IDLE;
 					case DEAD -> active = false;
 					}
-				} else if (enemyType == PINKSTAR) {
-					if (state == ATTACK)
-						aniIndex = 3;
-					else {
-						aniIndex = 0;
-						if (state == HIT) {
-							state = IDLE;
-
-						} else if (state == DEAD)
-							active = false;
-					}
-				}
+				} 
 			}
 		}
 	}
