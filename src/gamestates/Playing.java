@@ -177,29 +177,29 @@ public class Playing extends State implements Statemethods {
 			player.update();
 			enemyManager.update(levelManager.getCurrentLevel().getLevelData());
 			checkCloseToBorder();
-			if (drawShip)
-				updateShipAni();
+			// if (drawShip)
+			// 	updateShipAni();
 		}
 	}
 
-	private void updateShipAni() {
-		shipTick++;
-		if (shipTick >= 35) {
-			shipTick = 0;
-			shipAni++;
-			if (shipAni >= 4)
-				shipAni = 0;
-		}
+	// private void updateShipAni() {
+	// 	shipTick++;
+	// 	if (shipTick >= 35) {
+	// 		shipTick = 0;
+	// 		shipAni++;
+	// 		if (shipAni >= 4)
+	// 			shipAni = 0;
+	// 	}
 
-		shipHeightDelta += shipHeightChange * shipDir;
-		shipHeightDelta = Math.max(Math.min(10 * Game.SCALE, shipHeightDelta), 0);
+	// 	shipHeightDelta += shipHeightChange * shipDir;
+	// 	shipHeightDelta = Math.max(Math.min(10 * Game.SCALE, shipHeightDelta), 0);
 
-		if (shipHeightDelta == 0)
-			shipDir = 1;
-		else if (shipHeightDelta == 10 * Game.SCALE)
-			shipDir = -1;
+	// 	if (shipHeightDelta == 0)
+	// 		shipDir = 1;
+	// 	else if (shipHeightDelta == 10 * Game.SCALE)
+	// 		shipDir = -1;
 
-	}
+	// }
 
 	private void updateDialogue() {
 		for (DialogueEffect de : dialogEffects)
@@ -248,8 +248,8 @@ public class Playing extends State implements Statemethods {
 		if (drawRain)
 			rain.draw(g, xLvlOffset);
 
-		if (drawShip)
-			g.drawImage(shipImgs[shipAni], (int) (100 * Game.SCALE) - xLvlOffset, (int) ((288 * Game.SCALE) + shipHeightDelta), (int) (78 * Game.SCALE), (int) (72 * Game.SCALE), null);
+		// if (drawShip)
+		// 	g.drawImage(shipImgs[shipAni], (int) (100 * Game.SCALE) - xLvlOffset, (int) ((288 * Game.SCALE) + shipHeightDelta), (int) (78 * Game.SCALE), (int) (72 * Game.SCALE), null);
 
 		levelManager.draw(g, xLvlOffset);
 		objectManager.draw(g, xLvlOffset);
