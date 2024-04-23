@@ -20,7 +20,7 @@ public class Potion extends GameObject {
 	}
 
 	public void update() {
-		updateAnimationTick();
+		// updateAnimationTick();
 		updateHover();
 	}
 

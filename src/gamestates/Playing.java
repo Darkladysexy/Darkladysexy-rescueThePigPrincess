@@ -22,7 +22,7 @@ import utilz.LoadSave;
 import effects.DialogueEffect;
 import effects.Rain;
 
-import static utilz.Constants.Environment.*;
+// import static utilz.Constants.Environment.*;
 import static utilz.Constants.Dialogue.*;
 
 public class Playing extends State implements Statemethods {
@@ -76,16 +76,16 @@ public class Playing extends State implements Statemethods {
 		initClasses();
 
 		backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG);
-		bigCloud = LoadSave.GetSpriteAtlas(LoadSave.BIG_CLOUDS);
-		smallCloud = LoadSave.GetSpriteAtlas(LoadSave.SMALL_CLOUDS);
-		smallCloudsPos = new int[8];
-		for (int i = 0; i < smallCloudsPos.length; i++)
-			smallCloudsPos[i] = (int) (90 * Game.SCALE) + rnd.nextInt((int) (100 * Game.SCALE));
+		// bigCloud = LoadSave.GetSpriteAtlas(LoadSave.BIG_CLOUDS);
+		// smallCloud = LoadSave.GetSpriteAtlas(LoadSave.SMALL_CLOUDS);
+		// smallCloudsPos = new int[8];
+		// for (int i = 0; i < smallCloudsPos.length; i++)
+		// 	smallCloudsPos[i] = (int) (90 * Game.SCALE) + rnd.nextInt((int) (100 * Game.SCALE));
 
-		shipImgs = new BufferedImage[4];
-		BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.SHIP);
-		for (int i = 0; i < shipImgs.length; i++)
-			shipImgs[i] = temp.getSubimage(i * 78, 0, 78, 72);
+		// shipImgs = new BufferedImage[4];
+		// BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.SHIP);
+		// for (int i = 0; i < shipImgs.length; i++)
+		// 	shipImgs[i] = temp.getSubimage(i * 78, 0, 78, 72);
 
 		loadDialogue();
 		calcLvlOffset();
@@ -244,18 +244,18 @@ public class Playing extends State implements Statemethods {
 	public void draw(Graphics g) {
 		g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
 
-		drawClouds(g);
-		if (drawRain)
-			rain.draw(g, xLvlOffset);
+		// drawClouds(g);
+		// if (drawRain)
+		// 	rain.draw(g, xLvlOffset);
 
-		if (drawShip)
-			g.drawImage(shipImgs[shipAni], (int) (100 * Game.SCALE) - xLvlOffset, (int) ((288 * Game.SCALE) + shipHeightDelta), (int) (78 * Game.SCALE), (int) (72 * Game.SCALE), null);
+		// if (drawShip)
+		// 	g.drawImage(shipImgs[shipAni], (int) (100 * Game.SCALE) - xLvlOffset, (int) ((288 * Game.SCALE) + shipHeightDelta), (int) (78 * Game.SCALE), (int) (72 * Game.SCALE), null);
 
 		levelManager.draw(g, xLvlOffset);
 		objectManager.draw(g, xLvlOffset);
 		enemyManager.draw(g, xLvlOffset);
 		player.render(g, xLvlOffset);
-		objectManager.drawBackgroundTrees(g, xLvlOffset);
+		// objectManager.drawBackgroundTrees(g, xLvlOffset);
 		drawDialogue(g, xLvlOffset);
 
 		if (paused) {
@@ -271,13 +271,13 @@ public class Playing extends State implements Statemethods {
 
 	}
 
-	private void drawClouds(Graphics g) {
-		for (int i = 0; i < 4; i++)
-			g.drawImage(bigCloud, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null);
+	// private void drawClouds(Graphics g) {
+	// 	for (int i = 0; i < 4; i++)
+	// 		g.drawImage(bigCloud, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null);
 
-		for (int i = 0; i < smallCloudsPos.length; i++)
-			g.drawImage(smallCloud, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
-	}
+	// 	for (int i = 0; i < smallCloudsPos.length; i++)
+	// 		g.drawImage(smallCloud, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
+	// }
 
 	public void setGameCompleted() {
 		gameCompleted = true;
@@ -298,7 +298,7 @@ public class Playing extends State implements Statemethods {
 
 		player.resetAll();
 		enemyManager.resetAllEnemies();
-		objectManager.resetAllObjects();
+		// objectManager.resetAllObjects();
 		dialogEffects.clear();
 	}
 
@@ -313,7 +313,7 @@ public class Playing extends State implements Statemethods {
 	}
 
 	public void checkObjectHit(Rectangle2D.Float attackBox) {
-		objectManager.checkObjectHit(attackBox);
+		// objectManager.checkObjectHit(attackBox);
 	}
 
 	public void checkEnemyHit(Rectangle2D.Float attackBox) {
