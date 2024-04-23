@@ -21,7 +21,7 @@ public abstract class Enemy extends Entity {
 	protected boolean active = true;
 	protected boolean attackChecked;
 	protected int attackBoxOffsetX;
-	
+
 	public Enemy(float x, float y, int width, int height, int enemyType) {
 		super(x, y, width, height);
 		this.enemyType = enemyType;
@@ -37,7 +37,7 @@ public abstract class Enemy extends Entity {
 	}
 
 	protected void updateAttackBoxFlip() {
-		if (walkDir == RIGHT)
+		if (walkDir == LEFT)
 			attackBox.x = hitbox.x + hitbox.width;
 		else
 			attackBox.x = hitbox.x - attackBoxOffsetX;
@@ -143,9 +143,6 @@ public abstract class Enemy extends Entity {
 	protected void checkPlayerHit(Rectangle2D.Float attackBox, Player player) {
 		if (attackBox.intersects(player.hitbox))
 			player.changeHealth(-GetEnemyDmg(enemyType), this);
-		else {
-			
-		}
 		attackChecked = true;
 	}
 
