@@ -32,9 +32,14 @@ public abstract class Enemy extends Entity {
 	}
 
 	protected void updateAttackBox() {
-		attackBox.x = hitbox.x - attackBoxOffsetX;
+		if (walkDir == RIGHT)
+			attackBox.x = hitbox.x + hitbox.width;
+		else
+			attackBox.x = hitbox.x - attackBoxOffsetX;
+
 		attackBox.y = hitbox.y;
 	}
+
 
 	protected void updateAttackBoxFlip() {
 		if (walkDir == LEFT)
