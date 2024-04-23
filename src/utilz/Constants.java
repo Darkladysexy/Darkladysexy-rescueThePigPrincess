@@ -136,33 +136,35 @@ public class Constants {
 
 		public static final int IDLE = 0;
 		public static final int RUNNING = 1;
-		public static final int ATTACK = 2;
-		public static final int HIT = 3;
-		public static final int DEAD = 4;
+		public static final int JUMP = 2;
+		public static final int FALL = 3;
+		public static final int GROUND = 4;
+		public static final int HIT = 5;
+		public static final int DEAD = 6;
+		public static final int ATTACK = 7;
 
-		public static final int PIG_WIDTH_DEFAULT = 72;
-		public static final int PIG_HEIGHT_DEFAULT = 32;
+		public static final int PIG_WIDTH_DEFAULT = 34;
+		public static final int PIG_HEIGHT_DEFAULT = 28;
 		public static final int PIG_WIDTH = (int) (PIG_WIDTH_DEFAULT * Game.SCALE);
 		public static final int PIG_HEIGHT = (int) (PIG_HEIGHT_DEFAULT * Game.SCALE);
-		public static final int PIG_DRAWOFFSET_X = (int) (26 * Game.SCALE);
-		public static final int PIG_DRAWOFFSET_Y = (int) (9 * Game.SCALE);
-
+		public static final int PIG_DRAWOFFSET_X = (int) (10 * Game.SCALE);
+		public static final int PIG_DRAWOFFSET_Y = (int) (10 * Game.SCALE);
 
 		public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 			switch (enemy_state) {
 
 			case IDLE: {
 				if (enemy_type == PIG)
-					return 9;
+					return 11;
 			}
 			case RUNNING:
 				return 6;
 			case ATTACK:
-				return 7;
-			case HIT:
-				return 4;
-			case DEAD:
 				return 5;
+			case HIT:
+				return 2;
+			case DEAD:
+				return 4;
 			}
 
 			return 0;
