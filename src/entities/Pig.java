@@ -11,7 +11,7 @@ public class Pig extends Enemy {
 	public Pig(float x, float y) {
 		super(x, y, PIG_WIDTH, PIG_HEIGHT, PIG);
 		initHitbox(17, 16);
-		initAttackBox(21, 20, 16);
+		initAttackBox(30, 22, 16);
 	}
 
 	public void update(int[][] lvlData, Playing playing) {
