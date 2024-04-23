@@ -71,7 +71,7 @@ public class Player extends Entity {
 		this.currentHealth = maxHealth;
 		this.walkSpeed = Game.SCALE * 1.0f;
 		loadAnimations();
-		initHitbox(19, 26);
+		initHitbox(17, 26);
 		initAttackBox();
 	}
 
