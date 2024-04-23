@@ -5,9 +5,7 @@ import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import entities.Crabby;
-import entities.Pinkstar;
-import entities.Shark;
+import entities.Pig;
 import main.Game;
 import objects.BackgroundTree;
 import objects.Cannon;
@@ -24,9 +22,7 @@ public class Level {
 	private BufferedImage img;
 	private int[][] lvlData;
 
-	private ArrayList<Crabby> crabs = new ArrayList<>();
-	private ArrayList<Pinkstar> pinkstars = new ArrayList<>();
-	private ArrayList<Shark> sharks = new ArrayList<>();
+	private ArrayList<Pig> crabs = new ArrayList<>();
 	private ArrayList<Potion> potions = new ArrayList<>();
 	private ArrayList<Spike> spikes = new ArrayList<>();
 	private ArrayList<GameContainer> containers = new ArrayList<>();
@@ -82,9 +78,7 @@ public class Level {
 
 	private void loadEntities(int greenValue, int x, int y) {
 		switch (greenValue) {
-		case CRABBY -> crabs.add(new Crabby(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
-		case PINKSTAR -> pinkstars.add(new Pinkstar(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
-		case SHARK -> sharks.add(new Shark(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
+		case PIG -> crabs.add(new Pig(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
 		case 100 -> playerSpawn = new Point(x * Game.TILES_SIZE, y * Game.TILES_SIZE);
 		}
 	}
@@ -121,13 +115,10 @@ public class Level {
 		return playerSpawn;
 	}
 
-	public ArrayList<Crabby> getCrabs() {
+	public ArrayList<Pig> getPigs() {
 		return crabs;
 	}
 
-	public ArrayList<Shark> getSharks() {
-		return sharks;
-	}
 
 	public ArrayList<Potion> getPotions() {
 		return potions;
@@ -145,9 +136,6 @@ public class Level {
 		return cannons;
 	}
 
-	public ArrayList<Pinkstar> getPinkstars() {
-		return pinkstars;
-	}
 
 	public ArrayList<BackgroundTree> getTrees() {
 		return trees;
