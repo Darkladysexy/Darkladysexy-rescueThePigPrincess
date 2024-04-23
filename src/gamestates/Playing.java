@@ -22,7 +22,7 @@ import utilz.LoadSave;
 import effects.DialogueEffect;
 import effects.Rain;
 
-import static utilz.Constants.Environment.*;
+// import static utilz.Constants.Environment.*;
 import static utilz.Constants.Dialogue.*;
 
 public class Playing extends State implements Statemethods {
@@ -244,7 +244,7 @@ public class Playing extends State implements Statemethods {
 	public void draw(Graphics g) {
 		g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
 
-		drawClouds(g);
+		// drawClouds(g);
 		if (drawRain)
 			rain.draw(g, xLvlOffset);
 
@@ -255,7 +255,7 @@ public class Playing extends State implements Statemethods {
 		objectManager.draw(g, xLvlOffset);
 		enemyManager.draw(g, xLvlOffset);
 		player.render(g, xLvlOffset);
-		objectManager.drawBackgroundTrees(g, xLvlOffset);
+		// objectManager.drawBackgroundTrees(g, xLvlOffset);
 		drawDialogue(g, xLvlOffset);
 
 		if (paused) {
@@ -271,13 +271,13 @@ public class Playing extends State implements Statemethods {
 
 	}
 
-	private void drawClouds(Graphics g) {
-		for (int i = 0; i < 4; i++)
-			g.drawImage(bigCloud, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null);
+	// private void drawClouds(Graphics g) {
+	// 	for (int i = 0; i < 4; i++)
+	// 		g.drawImage(bigCloud, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null);
 
-		for (int i = 0; i < smallCloudsPos.length; i++)
-			g.drawImage(smallCloud, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
-	}
+	// 	for (int i = 0; i < smallCloudsPos.length; i++)
+	// 		g.drawImage(smallCloud, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
+	// }
 
 	public void setGameCompleted() {
 		gameCompleted = true;
@@ -312,9 +312,9 @@ public class Playing extends State implements Statemethods {
 		this.gameOver = gameOver;
 	}
 
-	public void checkObjectHit(Rectangle2D.Float attackBox) {
-		objectManager.checkObjectHit(attackBox);
-	}
+	// public void checkObjectHit(Rectangle2D.Float attackBox) {
+	// 	objectManager.checkObjectHit(attackBox);
+	// }
 
 	public void checkEnemyHit(Rectangle2D.Float attackBox) {
 		enemyManager.checkEnemyHit(attackBox);

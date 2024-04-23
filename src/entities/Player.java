@@ -176,7 +176,7 @@ public class Player extends Entity {
 			attackChecked = false;
 
 		playing.checkEnemyHit(attackBox);
-		playing.checkObjectHit(attackBox);
+		// playing.checkObjectHit(attackBox);
 		playing.getGame().getAudioPlayer().playAttackSound();
 	}
 
